@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "904495355765",
+    "project_id": "internalapp-56cde",
+    "storage_bucket": "internalapp-56cde.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:904495355765:android:accaccbe7e152ca398653c",
+        "android_client_info": {
+          "package_name": "com.datasystem.internalapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7VQEny6kj-tIRDDdHPtrmp0iwmKleN8w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
