@@ -104,17 +104,19 @@ class _CongratsWidgetState extends State<CongratsWidget> {
                                     letterSpacing: 0.0,
                                   ),
                             ),
-                            Text(
-                              currentUserEmail,
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Inter',
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    fontSize: 14.0,
-                                    letterSpacing: 0.0,
-                                  ),
+                            AuthUserStreamWidget(
+                              builder: (context) => Text(
+                                currentUserDisplayName,
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Inter',
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      fontSize: 14.0,
+                                      letterSpacing: 0.0,
+                                    ),
+                              ),
                             ),
                           ],
                         ),

@@ -79,20 +79,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? NavBarPage() : Auth1Widget(),
+          appStateNotifier.loggedIn ? HomePageWidget() : Auth1Widget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? NavBarPage() : Auth1Widget(),
+              appStateNotifier.loggedIn ? HomePageWidget() : Auth1Widget(),
         ),
         FFRoute(
           name: 'HomePage',
           path: '/homePage',
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'HomePage')
-              : HomePageWidget(),
+          builder: (context, params) => HomePageWidget(),
         ),
         FFRoute(
           name: 'Auth1',
@@ -102,35 +100,27 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'UploadDocument',
           path: '/uploadDocument',
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'UploadDocument')
-              : UploadDocumentWidget(),
+          builder: (context, params) => UploadDocumentWidget(),
         ),
         FFRoute(
           name: 'UploadVideo',
           path: '/uploadVideo',
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'UploadVideo')
-              : UploadVideoWidget(),
+          builder: (context, params) => UploadVideoWidget(),
         ),
         FFRoute(
           name: 'PaymentData',
           path: '/paymentData',
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'PaymentData')
-              : PaymentDataWidget(),
+          builder: (context, params) => PaymentDataWidget(),
         ),
         FFRoute(
           name: 'Congrats',
           path: '/congrats',
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'Congrats')
-              : CongratsWidget(),
+          builder: (context, params) => CongratsWidget(),
         ),
         FFRoute(
-          name: 'AdminPanel',
-          path: '/adminPanel',
-          builder: (context, params) => AdminPanelWidget(),
+          name: 'AdminPanelUsers',
+          path: '/adminPanelUsers',
+          builder: (context, params) => AdminPanelUsersWidget(),
         ),
         FFRoute(
           name: 'detailContent',
@@ -155,6 +145,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               collectionNamePath: ['user'],
             ),
           ),
+        ),
+        FFRoute(
+          name: 'AdminCreateAccount',
+          path: '/adminCreateAccount',
+          builder: (context, params) => AdminCreateAccountWidget(),
+        ),
+        FFRoute(
+          name: 'AdminHome',
+          path: '/adminHome',
+          builder: (context, params) => AdminHomeWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

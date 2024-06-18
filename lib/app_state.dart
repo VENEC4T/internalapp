@@ -50,50 +50,56 @@ class FFAppState extends ChangeNotifier {
 
   bool _video = false;
   bool get video => _video;
-  set video(bool _value) {
-    _video = _value;
-    prefs.setBool('ff_video', _value);
+  set video(bool value) {
+    _video = value;
+    prefs.setBool('ff_video', value);
   }
 
   int _requirements = 0;
   int get requirements => _requirements;
-  set requirements(int _value) {
-    _requirements = _value;
-    prefs.setInt('ff_requirements', _value);
+  set requirements(int value) {
+    _requirements = value;
+    prefs.setInt('ff_requirements', value);
   }
 
   int _TwoSidesDocument = 0;
   int get TwoSidesDocument => _TwoSidesDocument;
-  set TwoSidesDocument(int _value) {
-    _TwoSidesDocument = _value;
-    prefs.setInt('ff_TwoSidesDocument', _value);
+  set TwoSidesDocument(int value) {
+    _TwoSidesDocument = value;
+    prefs.setInt('ff_TwoSidesDocument', value);
   }
 
   bool _UploadedPaymentData = false;
   bool get UploadedPaymentData => _UploadedPaymentData;
-  set UploadedPaymentData(bool _value) {
-    _UploadedPaymentData = _value;
-    prefs.setBool('ff_UploadedPaymentData', _value);
+  set UploadedPaymentData(bool value) {
+    _UploadedPaymentData = value;
+    prefs.setBool('ff_UploadedPaymentData', value);
   }
 
   String _FrontDocumentPhoto = '';
   String get FrontDocumentPhoto => _FrontDocumentPhoto;
-  set FrontDocumentPhoto(String _value) {
-    _FrontDocumentPhoto = _value;
+  set FrontDocumentPhoto(String value) {
+    _FrontDocumentPhoto = value;
   }
 
   String _BackDocumentPhoto = '';
   String get BackDocumentPhoto => _BackDocumentPhoto;
-  set BackDocumentPhoto(String _value) {
-    _BackDocumentPhoto = _value;
-    prefs.setString('ff_BackDocumentPhoto', _value);
+  set BackDocumentPhoto(String value) {
+    _BackDocumentPhoto = value;
+    prefs.setString('ff_BackDocumentPhoto', value);
   }
 
   String _UserVideo = '';
   String get UserVideo => _UserVideo;
-  set UserVideo(String _value) {
-    _UserVideo = _value;
-    prefs.setString('ff_UserVideo', _value);
+  set UserVideo(String value) {
+    _UserVideo = value;
+    prefs.setString('ff_UserVideo', value);
+  }
+
+  String _defaultPassword = '123456';
+  String get defaultPassword => _defaultPassword;
+  set defaultPassword(String value) {
+    _defaultPassword = value;
   }
 }
 

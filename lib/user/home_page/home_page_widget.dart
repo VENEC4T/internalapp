@@ -572,7 +572,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         builder: (context) => FFButtonWidget(
                           onPressed: () async {
                             context.pushNamed(
-                              'AdminPanel',
+                              'AdminPanelUsers',
                               extra: <String, dynamic>{
                                 kTransitionInfoKey: TransitionInfo(
                                   hasTransition: true,

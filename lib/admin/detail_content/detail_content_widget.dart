@@ -1,4 +1,5 @@
 import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_video_player.dart';
@@ -60,22 +61,45 @@ class _DetailContentWidgetState extends State<DetailContentWidget> {
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).primary,
           automaticallyImplyLeading: false,
-          title: InkWell(
-            splashColor: Colors.transparent,
-            focusColor: Colors.transparent,
-            hoverColor: Colors.transparent,
-            highlightColor: Colors.transparent,
-            onTap: () async {
-              context.safePop();
-            },
-            child: Text(
-              'Page Title',
-              style: FlutterFlowTheme.of(context).headlineMedium.override(
-                    fontFamily: 'Readex Pro',
-                    color: Colors.white,
-                    fontSize: 20.0,
-                    letterSpacing: 0.0,
+          title: Container(
+            decoration: BoxDecoration(),
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                FlutterFlowIconButton(
+                  borderColor: FlutterFlowTheme.of(context).primary,
+                  borderRadius: 20.0,
+                  borderWidth: 1.0,
+                  buttonSize: 40.0,
+                  fillColor: FlutterFlowTheme.of(context).accent1,
+                  icon: Icon(
+                    Icons.arrow_back_rounded,
+                    color: FlutterFlowTheme.of(context).info,
+                    size: 30.0,
                   ),
+                  onPressed: () async {
+                    context.pushNamed('AdminPanelUsers');
+                  },
+                ),
+                InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () async {
+                    context.safePop();
+                  },
+                  child: Text(
+                    'Page Title',
+                    style: FlutterFlowTheme.of(context).headlineMedium.override(
+                          fontFamily: 'Readex Pro',
+                          color: Colors.white,
+                          fontSize: 20.0,
+                          letterSpacing: 0.0,
+                        ),
+                  ),
+                ),
+              ],
             ),
           ),
           actions: [],
