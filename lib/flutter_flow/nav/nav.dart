@@ -155,6 +155,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'AdminHome',
           path: '/adminHome',
           builder: (context, params) => AdminHomeWidget(),
+        ),
+        FFRoute(
+          name: 'FinalSteps',
+          path: '/finalSteps',
+          builder: (context, params) => FinalStepsWidget(),
+        ),
+        FFRoute(
+          name: 'Datamanagmentpolicy',
+          path: '/datamanagmentpolicy',
+          builder: (context, params) => DatamanagmentpolicyWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

@@ -58,53 +58,57 @@ class _DetailContentWidgetState extends State<DetailContentWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-        appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primary,
-          automaticallyImplyLeading: false,
-          title: Container(
-            decoration: BoxDecoration(),
-            child: Row(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                FlutterFlowIconButton(
-                  borderColor: FlutterFlowTheme.of(context).primary,
-                  borderRadius: 20.0,
-                  borderWidth: 1.0,
-                  buttonSize: 40.0,
-                  fillColor: FlutterFlowTheme.of(context).accent1,
-                  icon: Icon(
-                    Icons.arrow_back_rounded,
-                    color: FlutterFlowTheme.of(context).info,
-                    size: 30.0,
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(30.0),
+          child: AppBar(
+            backgroundColor: FlutterFlowTheme.of(context).primary,
+            automaticallyImplyLeading: false,
+            title: Container(
+              decoration: BoxDecoration(),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  FlutterFlowIconButton(
+                    borderColor: FlutterFlowTheme.of(context).primary,
+                    borderRadius: 20.0,
+                    borderWidth: 1.0,
+                    buttonSize: 40.0,
+                    fillColor: FlutterFlowTheme.of(context).accent1,
+                    icon: Icon(
+                      Icons.arrow_back_rounded,
+                      color: FlutterFlowTheme.of(context).info,
+                      size: 30.0,
+                    ),
+                    onPressed: () async {
+                      context.pushNamed('AdminPanelUsers');
+                    },
                   ),
-                  onPressed: () async {
-                    context.pushNamed('AdminPanelUsers');
-                  },
-                ),
-                InkWell(
-                  splashColor: Colors.transparent,
-                  focusColor: Colors.transparent,
-                  hoverColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
-                  onTap: () async {
-                    context.safePop();
-                  },
-                  child: Text(
-                    'Page Title',
-                    style: FlutterFlowTheme.of(context).headlineMedium.override(
-                          fontFamily: 'Readex Pro',
-                          color: Colors.white,
-                          fontSize: 20.0,
-                          letterSpacing: 0.0,
-                        ),
+                  InkWell(
+                    splashColor: Colors.transparent,
+                    focusColor: Colors.transparent,
+                    hoverColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    onTap: () async {
+                      context.safePop();
+                    },
+                    child: Text(
+                      'Page Title',
+                      style:
+                          FlutterFlowTheme.of(context).headlineMedium.override(
+                                fontFamily: 'Readex Pro',
+                                color: Colors.white,
+                                fontSize: 20.0,
+                                letterSpacing: 0.0,
+                              ),
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
+            actions: [],
+            centerTitle: false,
+            elevation: 2.0,
           ),
-          actions: [],
-          centerTitle: false,
-          elevation: 2.0,
         ),
         body: SafeArea(
           top: true,
@@ -193,14 +197,14 @@ class _DetailContentWidgetState extends State<DetailContentWidget> {
                                         columnDocumentAndInfoRecord!
                                             .documentFrontP,
                                         width: 170.0,
-                                        height: 200.0,
+                                        height: 170.0,
                                         fit: BoxFit.cover,
                                         errorBuilder:
                                             (context, error, stackTrace) =>
                                                 Image.asset(
                                           'assets/images/error_image.jpg',
                                           width: 170.0,
-                                          height: 200.0,
+                                          height: 170.0,
                                           fit: BoxFit.cover,
                                         ),
                                       ),
@@ -211,14 +215,14 @@ class _DetailContentWidgetState extends State<DetailContentWidget> {
                                         columnDocumentAndInfoRecord!
                                             .documentBackP,
                                         width: 170.0,
-                                        height: 200.0,
+                                        height: 170.0,
                                         fit: BoxFit.cover,
                                         errorBuilder:
                                             (context, error, stackTrace) =>
                                                 Image.asset(
                                           'assets/images/error_image.jpg',
                                           width: 170.0,
-                                          height: 200.0,
+                                          height: 170.0,
                                           fit: BoxFit.cover,
                                         ),
                                       ),
@@ -248,7 +252,7 @@ class _DetailContentWidgetState extends State<DetailContentWidget> {
                                       path: columnDocumentAndInfoRecord!.video,
                                       videoType: VideoType.network,
                                       width: 350.0,
-                                      height: 200.0,
+                                      height: 180.0,
                                       autoPlay: true,
                                       looping: false,
                                       showControls: true,
@@ -269,14 +273,14 @@ class _DetailContentWidgetState extends State<DetailContentWidget> {
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 10.0),
+                                            0.0, 0.0, 0.0, 5.0),
                                         child: Text(
                                           'Payment information',
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
                                                 fontFamily: 'Inter',
-                                                fontSize: 16.0,
+                                                fontSize: 15.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.bold,
                                               ),
@@ -300,7 +304,7 @@ class _DetailContentWidgetState extends State<DetailContentWidget> {
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 5.0, 0.0, 0.0),
+                                            0.0, 3.0, 0.0, 0.0),
                                         child: Text(
                                           valueOrDefault<String>(
                                             columnDocumentAndInfoRecord
@@ -318,7 +322,7 @@ class _DetailContentWidgetState extends State<DetailContentWidget> {
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 5.0, 0.0, 0.0),
+                                            0.0, 3.0, 0.0, 0.0),
                                         child: Text(
                                           valueOrDefault<String>(
                                             columnDocumentAndInfoRecord
@@ -335,7 +339,7 @@ class _DetailContentWidgetState extends State<DetailContentWidget> {
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 5.0, 0.0, 0.0),
+                                            0.0, 3.0, 0.0, 0.0),
                                         child: Text(
                                           valueOrDefault<String>(
                                             columnDocumentAndInfoRecord
@@ -353,7 +357,7 @@ class _DetailContentWidgetState extends State<DetailContentWidget> {
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 5.0, 0.0, 0.0),
+                                            0.0, 3.0, 0.0, 0.0),
                                         child: Text(
                                           valueOrDefault<String>(
                                             columnDocumentAndInfoRecord
@@ -370,7 +374,7 @@ class _DetailContentWidgetState extends State<DetailContentWidget> {
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 5.0, 0.0, 0.0),
+                                            0.0, 3.0, 0.0, 0.0),
                                         child: Text(
                                           valueOrDefault<String>(
                                             columnDocumentAndInfoRecord
@@ -387,7 +391,7 @@ class _DetailContentWidgetState extends State<DetailContentWidget> {
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 5.0, 0.0, 0.0),
+                                            0.0, 3.0, 0.0, 0.0),
                                         child: Text(
                                           valueOrDefault<String>(
                                             columnDocumentAndInfoRecord?.city,
@@ -403,7 +407,7 @@ class _DetailContentWidgetState extends State<DetailContentWidget> {
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 5.0, 0.0, 0.0),
+                                            0.0, 3.0, 0.0, 0.0),
                                         child: Text(
                                           valueOrDefault<String>(
                                             columnDocumentAndInfoRecord
@@ -418,6 +422,126 @@ class _DetailContentWidgetState extends State<DetailContentWidget> {
                                               ),
                                         ),
                                       ),
+                                      if (columnDocumentAndInfoRecord
+                                              ?.legalIdentitySignature ==
+                                          true)
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Theme(
+                                              data: ThemeData(
+                                                checkboxTheme:
+                                                    CheckboxThemeData(
+                                                  visualDensity:
+                                                      VisualDensity.compact,
+                                                  materialTapTargetSize:
+                                                      MaterialTapTargetSize
+                                                          .shrinkWrap,
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            4.0),
+                                                  ),
+                                                ),
+                                                unselectedWidgetColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                              ),
+                                              child: Checkbox(
+                                                value: _model.checkboxValue1 ??=
+                                                    columnDocumentAndInfoRecord!
+                                                        .legalIdentitySignature,
+                                                onChanged: (newValue) async {
+                                                  setState(() =>
+                                                      _model.checkboxValue1 =
+                                                          newValue!);
+                                                },
+                                                side: BorderSide(
+                                                  width: 2,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryText,
+                                                ),
+                                                activeColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                checkColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .info,
+                                              ),
+                                            ),
+                                            Text(
+                                              'Legal identity signature',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                          ],
+                                        ),
+                                      if (columnDocumentAndInfoRecord
+                                              ?.dataManagementLegalSignature ==
+                                          true)
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Theme(
+                                              data: ThemeData(
+                                                checkboxTheme:
+                                                    CheckboxThemeData(
+                                                  visualDensity:
+                                                      VisualDensity.compact,
+                                                  materialTapTargetSize:
+                                                      MaterialTapTargetSize
+                                                          .shrinkWrap,
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            4.0),
+                                                  ),
+                                                ),
+                                                unselectedWidgetColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                              ),
+                                              child: Checkbox(
+                                                value: _model.checkboxValue2 ??=
+                                                    columnDocumentAndInfoRecord!
+                                                        .dataManagementLegalSignature,
+                                                onChanged: (newValue) async {
+                                                  setState(() =>
+                                                      _model.checkboxValue2 =
+                                                          newValue!);
+                                                },
+                                                side: BorderSide(
+                                                  width: 2,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryText,
+                                                ),
+                                                activeColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                checkColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .info,
+                                              ),
+                                            ),
+                                            Text(
+                                              'Legal data management signature',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                          ],
+                                        ),
                                     ],
                                   ),
                                 ],

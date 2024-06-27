@@ -72,21 +72,24 @@ class _PaymentDataWidgetState extends State<PaymentDataWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-        appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primary,
-          automaticallyImplyLeading: false,
-          title: Text(
-            'Payment data/Datos de pago\n',
-            style: FlutterFlowTheme.of(context).headlineMedium.override(
-                  fontFamily: 'Readex Pro',
-                  color: Colors.white,
-                  fontSize: 22.0,
-                  letterSpacing: 0.0,
-                ),
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(45.0),
+          child: AppBar(
+            backgroundColor: FlutterFlowTheme.of(context).primary,
+            automaticallyImplyLeading: false,
+            title: Text(
+              'Payment data/Datos de pago\n',
+              style: FlutterFlowTheme.of(context).headlineMedium.override(
+                    fontFamily: 'Readex Pro',
+                    color: Colors.white,
+                    fontSize: 22.0,
+                    letterSpacing: 0.0,
+                  ),
+            ),
+            actions: [],
+            centerTitle: false,
+            elevation: 2.0,
           ),
-          actions: [],
-          centerTitle: false,
-          elevation: 2.0,
         ),
         body: SafeArea(
           top: true,
@@ -502,7 +505,7 @@ class _PaymentDataWidgetState extends State<PaymentDataWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(30.0, 5.0, 30.0, 10.0),
+                        EdgeInsetsDirectional.fromSTEB(30.0, 5.0, 30.0, 5.0),
                     child: TextFormField(
                       controller: _model.binanceEmailTextController,
                       focusNode: _model.binanceEmailFocusNode,
@@ -577,10 +580,12 @@ class _PaymentDataWidgetState extends State<PaymentDataWidget> {
                             documentFrontP: FFAppState().FrontDocumentPhoto,
                             documentBackP: FFAppState().BackDocumentPhoto,
                             video: FFAppState().UserVideo,
+                            legalIdentitySignature: true,
+                            dataManagementLegalSignature: true,
                           ));
                       FFAppState().UploadedPaymentData = true;
 
-                      context.pushNamed('Congrats');
+                      context.pushNamed('FinalSteps');
                     },
                     text: 'Send Info',
                     options: FFButtonOptions(

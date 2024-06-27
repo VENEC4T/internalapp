@@ -285,42 +285,6 @@ class _AdminCreateAccountWidgetState extends State<AdminCreateAccountWidget> {
                                     .asValidator(context),
                               ),
                             ),
-                            Theme(
-                              data: ThemeData(
-                                unselectedWidgetColor:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                              ),
-                              child: CheckboxListTile(
-                                value: _model.checkboxListTileValue ??= true,
-                                onChanged: (newValue) async {
-                                  setState(() =>
-                                      _model.checkboxListTileValue = newValue!);
-                                },
-                                title: Text(
-                                  'I would like to receive inspriation emails.',
-                                  style: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .override(
-                                        fontFamily: 'Inter',
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                                tileColor: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                activeColor:
-                                    FlutterFlowTheme.of(context).primaryText,
-                                checkColor: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                dense: false,
-                                controlAffinity:
-                                    ListTileControlAffinity.leading,
-                                contentPadding: EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 0.0, 16.0, 0.0),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(4.0),
-                                ),
-                              ),
-                            ),
                           ],
                         ),
                       ),

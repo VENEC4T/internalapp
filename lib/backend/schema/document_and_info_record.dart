@@ -76,6 +76,18 @@ class DocumentAndInfoRecord extends FirestoreRecord {
   String get associatedUser => _associatedUser ?? '';
   bool hasAssociatedUser() => _associatedUser != null;
 
+  // "legal_identity_signature" field.
+  bool? _legalIdentitySignature;
+  bool get legalIdentitySignature => _legalIdentitySignature ?? false;
+  bool hasLegalIdentitySignature() => _legalIdentitySignature != null;
+
+  // "data_management_legal_signature" field.
+  bool? _dataManagementLegalSignature;
+  bool get dataManagementLegalSignature =>
+      _dataManagementLegalSignature ?? false;
+  bool hasDataManagementLegalSignature() =>
+      _dataManagementLegalSignature != null;
+
   void _initializeFields() {
     _documentFrontP = snapshotData['document_front_p'] as String?;
     _documentBackP = snapshotData['document_back_p'] as String?;
@@ -89,6 +101,9 @@ class DocumentAndInfoRecord extends FirestoreRecord {
     _city = snapshotData['city'] as String?;
     _binancePayEmail = snapshotData['binance_pay_email'] as String?;
     _associatedUser = snapshotData['associated_user'] as String?;
+    _legalIdentitySignature = snapshotData['legal_identity_signature'] as bool?;
+    _dataManagementLegalSignature =
+        snapshotData['data_management_legal_signature'] as bool?;
   }
 
   static CollectionReference get collection =>
@@ -138,6 +153,8 @@ Map<String, dynamic> createDocumentAndInfoRecordData({
   String? city,
   String? binancePayEmail,
   String? associatedUser,
+  bool? legalIdentitySignature,
+  bool? dataManagementLegalSignature,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -153,6 +170,8 @@ Map<String, dynamic> createDocumentAndInfoRecordData({
       'city': city,
       'binance_pay_email': binancePayEmail,
       'associated_user': associatedUser,
+      'legal_identity_signature': legalIdentitySignature,
+      'data_management_legal_signature': dataManagementLegalSignature,
     }.withoutNulls,
   );
 
@@ -176,7 +195,9 @@ class DocumentAndInfoRecordDocumentEquality
         e1?.country == e2?.country &&
         e1?.city == e2?.city &&
         e1?.binancePayEmail == e2?.binancePayEmail &&
-        e1?.associatedUser == e2?.associatedUser;
+        e1?.associatedUser == e2?.associatedUser &&
+        e1?.legalIdentitySignature == e2?.legalIdentitySignature &&
+        e1?.dataManagementLegalSignature == e2?.dataManagementLegalSignature;
   }
 
   @override
@@ -192,7 +213,9 @@ class DocumentAndInfoRecordDocumentEquality
         e?.country,
         e?.city,
         e?.binancePayEmail,
-        e?.associatedUser
+        e?.associatedUser,
+        e?.legalIdentitySignature,
+        e?.dataManagementLegalSignature
       ]);
 
   @override

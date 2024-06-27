@@ -13,3 +13,6 @@ export '/admin/detail_content/detail_content_widget.dart'
 export '/admin/admin_create_account/admin_create_account_widget.dart'
     show AdminCreateAccountWidget;
 export '/admin/admin_home/admin_home_widget.dart' show AdminHomeWidget;
+export '/user/final_steps/final_steps_widget.dart' show FinalStepsWidget;
+export '/pages/datamanagmentpolicy/datamanagmentpolicy_widget.dart'
+    show DatamanagmentpolicyWidget;

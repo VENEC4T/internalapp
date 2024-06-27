@@ -22,8 +22,6 @@ class AdminCreateAccountModel
   FocusNode? emailFieldFocusNode;
   TextEditingController? emailFieldTextController;
   String? Function(BuildContext, String?)? emailFieldTextControllerValidator;
-  // State field(s) for CheckboxListTile widget.
-  bool? checkboxListTileValue;
 
   @override
   void initState(BuildContext context) {}
