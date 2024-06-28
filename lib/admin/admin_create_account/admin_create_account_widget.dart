@@ -79,11 +79,12 @@ class _AdminCreateAccountWidgetState extends State<AdminCreateAccountWidget> {
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: AlignmentDirectional(0.0, 0.0),
+            alignment: AlignmentDirectional(0.0, -1.0),
             child: Container(
               width: double.infinity,
               constraints: BoxConstraints(
-                maxWidth: 670.0,
+                maxWidth: 500.0,
+                maxHeight: 500.0,
               ),
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
