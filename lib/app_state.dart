@@ -101,6 +101,12 @@ class FFAppState extends ChangeNotifier {
   set defaultPassword(String value) {
     _defaultPassword = value;
   }
+
+  bool _ShowDetailedImage = false;
+  bool get ShowDetailedImage => _ShowDetailedImage;
+  set ShowDetailedImage(bool value) {
+    _ShowDetailedImage = value;
+  }
 }
 
 void _safeInit(Function() initializeField) {
